@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_024719) do
   create_table "office_hours", force: :cascade do |t|
     t.bigint "course_id"
     t.string "day"
-    t.time "star"
+    t.time "start"
     t.time "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
