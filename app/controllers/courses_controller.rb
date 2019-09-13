@@ -10,12 +10,13 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @course.office_hours.build
   end
   def create
     @course = Course.create(course_params)
     @course.user = current_user if current_user
     if @course.save
-      redirect_to course_path(@course)
+      redirect_to courses_path
     else
       render :new
     end
@@ -42,6 +43,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:name, :user_id, office_hours_attributes: [:start, :day, :end])
+    params.require(:course).permit(:name, :user_id, office_hours_attributes: [:location, :time])
   end
 end
