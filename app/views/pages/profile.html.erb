@@ -2,7 +2,7 @@
 
 <p>My courses</p>
 <% current_user.courses.each do |c| %>
-  <p><%= link_to c.name, course_path(c) %></p>
+  <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %></p>
 <% end %>
 
 <p><%= link_to 'Add a class', new_course_path(@course) %></p>
