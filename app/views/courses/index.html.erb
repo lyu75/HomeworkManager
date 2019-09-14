@@ -1,4 +1,4 @@
 <h1>All Classes</h1>
 <% @courses.each do |c| %>
-  <p><%=c.name%></p>
+  <p><%= link_to c.name, course_path(c) %></p>
 <% end %>

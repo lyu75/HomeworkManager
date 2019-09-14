@@ -1,1 +1,6 @@
-<p><%= current_user.username %></p>
+<h4><%= current_user.username %></h4>
+
+<p>My courses</p>
+<% current_user.courses.each do |c| %>
+  <p><%= c.name %></p>
+<% end %>
