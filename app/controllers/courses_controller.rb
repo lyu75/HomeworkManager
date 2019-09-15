@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
     @course = Course.create(course_params)
     @course.user = current_user if current_user
     if @course.save
-      redirect_to courses_path
+      redirect_to profile_path(current_user)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_path
+    redirect_to profile_path(current_user)
   end
 
   private
