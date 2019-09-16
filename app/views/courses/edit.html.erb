@@ -1,5 +1,11 @@
 <h2>Edit this class</h2>
 <%= form_for @course do |f| %>
   <%= f.text_field :name, placeholder: 'name' %>
+
+  <%= f.fields_for :office_hours do |oh| %>
+    <%= oh.text_field :location, value: @course.office_hours.first.location %>
+    <%= oh.text_field :time, value: @course.office_hours.first.time %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
