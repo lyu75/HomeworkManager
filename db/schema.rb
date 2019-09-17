@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_221944) do
+ActiveRecord::Schema.define(version: 2019_09_17_231639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_221944) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "time"
+    t.string "day"
     t.index ["course_id"], name: "index_office_hours_on_course_id"
   end
 

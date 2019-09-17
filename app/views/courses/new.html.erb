@@ -4,12 +4,15 @@
   <%= f.text_field :name, placeholder: "Name of the class" %>
   <%= f.text_field :oh_location, placeholder: "Office hour location" %>
 
-  <h4>Office Hours</h4>
-  <div id='add_oh'>
-    <%= f.fields_for :office_hours do |office_hours_form| %>
-      <%= office_hours_form.text_field :time, placeholder: "time" %>
-    <% end %>
-  </div>
+  <!--
+    <h4>Office Hours</h4>
+    <div id='add_oh'>
+      <%= f.fields_for :office_hours do |office_hours_form| %>
+        <%= office_hours_form.week_field :day, placeholder: "day in a week" %>
+        <%= office_hours_form.text_field :time, placeholder: "time" %>
+      <% end %>
+    </div>
+  -->
 
   <%= f.submit %>
 <% end %>
