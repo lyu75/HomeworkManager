@@ -43,6 +43,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:name, :user_id, office_hours_attributes: [:location, :time])
+    params.require(:course).permit(:name, :oh_location, :user_id, office_hours_attributes: [:time])
   end
 end
