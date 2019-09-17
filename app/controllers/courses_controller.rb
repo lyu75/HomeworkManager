@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
-    @course.office_hours.build
+    # @course.office_hours.build
   end
   def create
     @course = Course.create(course_params)
