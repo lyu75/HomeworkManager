@@ -1,4 +1,5 @@
 <h2><%= @course.name %></h2>
+<p>Office hour location: <%= @course.oh_location %></p>
 <% @course.office_hours.each do |oh| %>
-  <p><%= oh.location %>, <%= oh.time %></p>
+  <p><%= oh.time %></p>
 <% end %>

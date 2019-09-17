@@ -2,11 +2,11 @@
 
 <%= form_for @course do |f| %>
   <%= f.text_field :name, placeholder: "Name of the class" %>
+  <%= f.text_field :oh_location, placeholder: "Office hour location" %>
 
   <h4>Office Hours</h4>
   <div id='add_oh'>
     <%= f.fields_for :office_hours do |office_hours_form| %>
-      <%= office_hours_form.text_field :location, placeholder: "Location" %>
       <%= office_hours_form.text_field :time, placeholder: "time" %>
     <% end %>
   </div>
