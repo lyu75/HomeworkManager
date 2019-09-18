@@ -2,7 +2,13 @@
 <p>Office Hours: </p>
 <%= @course.oh_location %>
 <% @course.office_hours.each do |oh| %>
-  <p><%= oh.time %></p>
+  <p><%= oh.day %> <%= oh.time %></p>
+
+  <% if current_user == @course.user %>
+  <p><%= link_to 'delete', office_hour_path(oh), method: :delete %></p>
+  <% end %>
 <% end %>
 
+<% if current_user == @course.user %>
 <%= render 'office_hours/new' %>
+<% end %>
