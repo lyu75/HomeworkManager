@@ -20,6 +20,8 @@ class OfficeHoursController < ApplicationController
   end
 
   def destroy
+    @office_hour.destroy
+    redirect_to(course_path(@office_hour.course))
   end
 
   private

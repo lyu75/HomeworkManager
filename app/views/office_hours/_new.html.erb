@@ -2,6 +2,7 @@
 <%= form_for @office_hour do |f| %>
   <%= f.text_field :day, placeholder: 'day in a week' %>
   <%= f.text_field :time, placeholder: 'time interval' %>
+  <!-- the following hidden field cannot be discarded -->
   <%= f.hidden_field :course_id, value: @course.id %>
   <%= f.submit %>
 <% end %>

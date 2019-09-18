@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :courses, only: [:show] do
-    resources :office_hours, only: [:create]
+    resources :office_hours, only: [:create, :destroy]
   end
   resources :office_hours
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
