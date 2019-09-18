@@ -1,0 +1,7 @@
+<h4>Add Office Hours</h4>
+<%= form_for @office_hour do |f| %>
+  <%= f.text_field :day, placeholder: 'day in a week' %>
+  <%= f.text_field :time, placeholder: 'time interval' %>
+  <%= f.hidden_field :course_id, value: @course.id %>
+  <%= f.submit %>
+<% end %>

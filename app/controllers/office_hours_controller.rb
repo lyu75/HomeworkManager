@@ -3,8 +3,15 @@ class OfficeHoursController < ApplicationController
   before_action :set_office_hour, only: [:edit, :update, :destroy]
 
   def new
+    @course = Course.find(params["office_hour"]["course_id"])
+    p 'found course id'
+    @office_hour = OfficeHour.new
   end
   def create
+    @course = Course.find(params["office_hour"]["course_id"])
+    @office_hour = OfficeHour.create(office_hour_params)
+    @office_hour.course = @course
+    redirect_to(course_path(@course))
   end
 
   def edit
@@ -13,5 +20,14 @@ class OfficeHoursController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def set_office_hour
+    @office_hour = OfficeHour.find(params[:id])
+  end
+
+  def office_hour_params
+    params.require(:office_hour).permit(:time, :day, :course_id)
   end
 end
