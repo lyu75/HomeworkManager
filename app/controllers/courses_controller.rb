@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
   def show
+    @office_hour = OfficeHour.new
   end
 
   def new
