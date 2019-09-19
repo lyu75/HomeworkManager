@@ -1,8 +1,22 @@
 <h4><%= current_user.username %></h4>
 
-<p>My courses</p>
+<h4>My courses</h4>
 <% current_user.courses.each do |c| %>
   <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %> | <%= link_to 'Delete', course_path(c), method: :delete %></p>
 <% end %>
 
 <p><%= link_to 'Add a class', new_course_path(@course) %></p>
+
+<h4>My tasks</h4>
+<% current_user.tasks.each do |t| %>
+  <div>
+    <p>-------------------------</p>
+    <p><%= t.course.name %> | <%= t.description %> | <%= t.duedate %></p>
+    <% if t.complete %>
+      <p>Completed</p>
+    <% else %>
+      <p>Not Completed</p>
+    <% end %>
+    <p>-------------------------</p>
+  </div>
+<% end %>
