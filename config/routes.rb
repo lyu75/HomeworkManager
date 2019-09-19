@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :office_hours
+  resources :tasks
 
   resources :courses, only: [:show] do
     resources :office_hours, only: [:create]
-    resources :tasks
+    resources :tasks, only: [:new, :create]
   end
 end
