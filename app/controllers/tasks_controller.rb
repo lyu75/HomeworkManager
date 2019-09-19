@@ -18,6 +18,11 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task.destroy
+    redirect_to profile_path(current_user)
+  end
+
   private
   def set_task
     @task = Task.find(params[:id])
