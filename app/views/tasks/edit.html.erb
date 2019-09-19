@@ -1,0 +1,6 @@
+<h4>Edit a Task</h4>
+<%= form_for @task do |f| %>
+  <%= f.text_field :description, placeholder: 'description' %>
+  <%= f.date_field :duedate, placeholder: 'due date' %>
+  <%= f.submit %>
+<% end %>

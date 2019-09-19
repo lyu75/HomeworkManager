@@ -16,7 +16,8 @@
     <% else %>
       <p>Not Completed</p>
     <% end %>
-    <%= link_to 'Delete', task_path(t), method: :delete %>
+    <%= link_to 'Delete', task_path(t), method: :delete %> |
+    <%= link_to 'Edit', edit_task_path(t) %>
     <p>-------------------------</p>
   </div>
 <% end %>

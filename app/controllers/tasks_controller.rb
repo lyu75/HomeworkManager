@@ -18,6 +18,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+  end
+  def update
+    if @task.update(task_params)
+      redirect_to profile_path(current_user)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @task.destroy
     redirect_to profile_path(current_user)
