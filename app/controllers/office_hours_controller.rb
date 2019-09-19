@@ -4,7 +4,6 @@ class OfficeHoursController < ApplicationController
 
   def new
     @course = Course.find(params["office_hour"]["course_id"])
-    p 'found course id'
     @office_hour = OfficeHour.new
   end
   def create

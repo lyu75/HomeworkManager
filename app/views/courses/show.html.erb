@@ -9,8 +9,12 @@
   <% end %>
 <% end %>
 
-<% if current_user == @course.user %>
-<%= render 'office_hours/new' %>
-<% end %>
+<div>
+  <% if current_user == @course.user %>
+  <%= render 'office_hours/new' %>
+  <% end %>
+</div>
 
-<p>Tasks</p>
+<div>
+  <h4><%= link_to 'Add a Task', new_course_task_path(@course) %></h4>
+</div>

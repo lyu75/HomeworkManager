@@ -1,0 +1,7 @@
+<h4>Add a Task</h4>
+<%= form_for(@task, url: course_tasks_path(@course), html: {mathod: 'post'}) do |f| %>
+  <%= f.text_field :description, placeholder: 'description' %>
+  <%= f.date_field :duedate, placeholder: 'due date' %>
+  <%= f.hidden_field :completed, value: false %>
+  <%= f.submit %>
+<% end %>
