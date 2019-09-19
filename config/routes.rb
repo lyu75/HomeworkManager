@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :office_hours, only: [:create, :destroy]
   end
   resources :office_hours
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :tasks
 end
