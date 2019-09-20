@@ -2,7 +2,7 @@
 
 <h4>My courses</h4>
 <% current_user.courses.each do |c| %>
-  <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %> | <%= link_to 'Delete', course_path(c), method: :delete %></p>
+  <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %> | <%= link_to 'Delete', course_path(c), method: :delete, data: {confirm: 'Are you sure?'} %></p>
 <% end %>
 
 <p><%= link_to 'Add a class', new_course_path(@course) %></p>
