@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to profile_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   private

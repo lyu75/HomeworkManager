@@ -20,7 +20,7 @@ class OfficeHoursController < ApplicationController
 
   def destroy
     @office_hour.destroy
-    redirect_to(course_path(@office_hour.course))
+    redirect_back(fallback_location: root_path)
   end
 
   private

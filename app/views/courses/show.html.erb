@@ -23,5 +23,11 @@
   <h4>Tasks</h4>
   <% @my_tasks.each do |t| %>
     <p><%= t.description %> | <%= t.duedate %> |<%= t.complete ? 'Completed' : 'Not completed' %></p>
+
+    <% if t.complete %>
+      <%= link_to 'Mark Inomplete', incomplete_task_path(t), method: :put %> |
+    <% else %>
+      <%= link_to 'Mark Complete', complete_task_path(t), method: :put %> |
+    <% end %>
   <% end %>
 </div>
