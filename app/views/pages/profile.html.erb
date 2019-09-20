@@ -10,13 +10,10 @@
 <h4>My tasks</h4>
 <% current_user.tasks.each do |t| %>
   <div>
-    <p><%= t.course.name %> | <%= t.description %> | <%= t.duedate %></p>
-    <% if t.complete %>
-      <p>Completed</p>
-    <% else %>
-      <p>Not Completed</p>
-    <% end %>
+    <p><%= t.course.name %> | <%= t.description %> | <%= t.duedate %> | <%= t.complete ? 'Complete' : 'Not complete' %></p>
+
     <%= link_to 'Delete', task_path(t), method: :delete, data: {confirm: 'Are you sure?'} %> |
+
     <%= link_to 'Edit', edit_task_path(t) %>
     <p>-------------------------</p>
   </div>
