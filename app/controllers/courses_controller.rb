@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     @my_tasks = []
     if current_user
       current_user.tasks.each do |t|
-        if t.user == current_user
+        if t.course == @course
           @my_tasks << t
         end
       end
