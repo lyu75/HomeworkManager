@@ -5,7 +5,7 @@
   <p><%= oh.day %> <%= oh.time %></p>
 
   <% if current_user == @course.user %>
-  <p><%= link_to 'delete', office_hour_path(oh), method: :delete %></p>
+  <p><%= link_to 'delete', office_hour_path(oh), method: :delete, data: {confirm: 'Are you sure?'} %></p>
   <% end %>
 <% end %>
 
@@ -17,4 +17,11 @@
 
 <div>
   <h4><%= link_to 'Add a Task', new_course_task_path(@course) %></h4>
+</div>
+
+<div>
+  <h4>Tasks</h4>
+  <% @my_tasks.each do |t| %>
+    <p><%= t.description %> | <%= t.duedate %> |<%= t.complete ? 'Completed' : 'Not completed' %></p>
+  <% end %>
 </div>
