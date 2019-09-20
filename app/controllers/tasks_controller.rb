@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :destroy, :mark_complete, :mark_incomplete]
 
   def new
     @course = Course.find(params[:course_id])
@@ -27,10 +27,20 @@ class TasksController < ApplicationController
       render :edit
     end
   end
+  def mark_complete
+    @task.update_attribute(:complete, true)
+    flash[:notice] = 'Marked task as complete'
+    redirect_back(fallback_location: root_path)
+  end
+  def mark_incomplete
+    @task.update_attribute(:complete, false)
+    flash[:notice] = 'Marked task as incomplete'
+    redirect_back(fallback_location: root_path)
+  end
 
   def destroy
     @task.destroy
-    redirect_to profile_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   private

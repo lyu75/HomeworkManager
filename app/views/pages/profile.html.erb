@@ -14,7 +14,13 @@
 
     <%= link_to 'Delete', task_path(t), method: :delete, data: {confirm: 'Are you sure?'} %> |
 
-    <%= link_to 'Edit', edit_task_path(t) %>
+    <%= link_to 'Edit', edit_task_path(t) %> |
+
+    <% if t.complete %>
+      <%= link_to 'Mark Inomplete', incomplete_task_path(t), method: :put %>
+    <% else %>
+      <%= link_to 'Mark Complete', complete_task_path(t), method: :put %> |
+    <% end %>
     <p>-------------------------</p>
   </div>
 <% end %>
