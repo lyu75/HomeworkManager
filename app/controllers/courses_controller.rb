@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   end
   def show
     @office_hour = OfficeHour.new
+    # find all tasks the current user created for the current course
     @my_tasks = []
     if current_user
       current_user.tasks.each do |t|
