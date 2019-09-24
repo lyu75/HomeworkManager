@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'deleting tasks...'
+Task.destroy_all
 puts 'deleting office hours...'
 OfficeHour.destroy_all
 puts 'deleting courses...'
