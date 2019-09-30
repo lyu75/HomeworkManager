@@ -2,8 +2,39 @@
 @import "home";
 
 body {
+  // need to set background color inline
 }
 
 h2 {
   color: black;
+}
+
+#banner {
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-bottom: 100px;
+  background: rgb(235,249,253);
+  background: linear-gradient(90deg, rgba(235,249,253,0.6) 0%, rgba(206,206,229,0.6) 48%, rgba(168,211,255,0.8) 100%);
+}
+#banner h2 {
+  letter-spacing: 10px;
+}
+.btn1 {
+  margin-top: 30px;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 15px;
+  background-color: rgb(255,255,255);
+}
+.btn1 a {
+  color: rgba(0,0,0, 0.4);
+  text-decoration: none;
+}
+.btn1 a:hover {
+  color: rgba(0,0,0, 0.2);
+}
+.btn:hover {
+  background-color: rgba(255,255,255,0.5);
 }
