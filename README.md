@@ -9,7 +9,7 @@ The user can:
 
 2 - Specify an office hour location and time for that class
 
-3 - Add homework assignment for a class, mark that as complete/incomplete
+3 - Add homework assignments for a class, mark each one of them as complete/incomplete
 
 
 Will update with more features and push to heroku. 
