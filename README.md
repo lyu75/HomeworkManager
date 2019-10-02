@@ -12,4 +12,4 @@ The user can:
 3 - Add homework assignment for a class, mark that as complete/incomplete
 
 
-Will update with more features...
+Will update with more features and push to heroku. 
