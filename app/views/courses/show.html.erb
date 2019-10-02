@@ -1,4 +1,7 @@
-<h2><%= @course.name %></h2>
+<div class="title">
+  <h2><%= @course.name %></h2>
+</div>
+
 <p>Office Hours: </p>
 <%= @course.oh_location %>
 <% @course.office_hours.each do |oh| %>
