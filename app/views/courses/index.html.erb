@@ -1,4 +1,6 @@
-<h1>All Classes</h1>
+<div class="title">
+  <h1>All Classes</h1>
+</div>
 <% @courses.each do |c| %>
   <p><%= link_to c.name, course_path(c) %></p>
 <% end %>
