@@ -14,9 +14,9 @@
         <% @course.office_hours.each do |oh| %>
           <p><%= oh.day %> <%= oh.time %>
           <% if current_user == @course.user %>
-          <%= link_to 'delete', office_hour_path(oh), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+            <%= link_to '<i class="fas fa-backspace"></i>'.html_safe, office_hour_path(oh), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
   </div>
