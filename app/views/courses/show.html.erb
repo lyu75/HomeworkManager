@@ -2,21 +2,34 @@
   <h3><%= @course.name %></h3>
 </div>
 
-<p>Office Hours: </p>
-<%= @course.oh_location %>
-<% @course.office_hours.each do |oh| %>
-  <p><%= oh.day %> <%= oh.time %></p>
+<div class='main-oh-container d-flex justify-content-around'>
+  <div>
+    <div class='oh-container d-flex b-shadow'>
+      <div class='oh-card border-r text-center'>
+        <h4>Office Hours </h4>
+        <p><%= @course.oh_location %></p>
+      </div>
 
-  <% if current_user == @course.user %>
-  <p><%= link_to 'delete', office_hour_path(oh), method: :delete, data: {confirm: 'Are you sure?'} %></p>
-  <% end %>
-<% end %>
+      <div class='oh-card'>
+        <% @course.office_hours.each do |oh| %>
+          <p><%= oh.day %> <%= oh.time %>
+          <% if current_user == @course.user %>
+          <%= link_to 'delete', office_hour_path(oh), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <% if current_user == @course.user %>
-  <%= render 'office_hours/new' %>
-  <% end %>
+  <div class='d-flex'>
+    <div class='add-oh'>
+      <% if current_user == @course.user %>
+      <%= render 'office_hours/new' %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 
 <div>
   <h4><%= link_to 'Add a Task', new_course_task_path(@course) %></h4>
