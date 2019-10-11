@@ -1,26 +1,43 @@
-<h4><%= current_user.username %></h4>
 
-<h4>My courses</h4>
-<% current_user.courses.each do |c| %>
-  <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %> | <%= link_to 'Delete', course_path(c), method: :delete, data: {confirm: 'Are you sure?'} %></p>
-<% end %>
+<div class="title mb3">
+  <h4><%= current_user.username %></h4>
+</div>
 
-<p><%= link_to 'Add a class', new_course_path(@course) %></p>
+<div class="ml3">
 
-<h4>My tasks</h4>
-<% current_user.tasks.each do |t| %>
-  <div>
-    <p><%= t.course.name %> | <%= t.description %> | <%= t.duedate %> | <%= t.complete ? 'Complete' : 'Not complete' %></p>
 
-    <%= link_to 'Delete', task_path(t), method: :delete, data: {confirm: 'Are you sure?'} %> |
-
-    <%= link_to 'Edit', edit_task_path(t) %> |
-
-    <% if t.complete %>
-      <%= link_to 'Mark Inomplete', incomplete_task_path(t), method: :put %>
-    <% else %>
-      <%= link_to 'Mark Complete', complete_task_path(t), method: :put %> |
-    <% end %>
-    <p>-------------------------</p>
+  <div class="mb3">
+    <h4>My courses</h4>
   </div>
-<% end %>
+
+
+  <% current_user.courses.each do |c| %>
+    <div class="class mb3 w600">
+      <p><%= link_to c.name, course_path(c) %> | <%= link_to 'Edit', edit_course_path(c) %> | <%= link_to 'Delete', course_path(c), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+    </div>
+
+  <% end %>
+
+  <p><%= link_to 'Add a class', new_course_path(@course) %></p>
+
+  <div class="mb3">
+    <h4>My tasks</h4>
+  </div>
+
+  <% current_user.tasks.each do |t| %>
+    <div>
+      <p><%= t.course.name %> | <%= t.description %> | <%= t.duedate %> | <%= t.complete ? 'Complete' : 'Not complete' %></p>
+
+      <%= link_to 'Delete', task_path(t), method: :delete, data: {confirm: 'Are you sure?'} %> |
+
+      <%= link_to 'Edit', edit_task_path(t) %> |
+
+      <% if t.complete %>
+        <%= link_to 'Mark Inomplete', incomplete_task_path(t), method: :put %>
+      <% else %>
+        <%= link_to 'Mark Complete', complete_task_path(t), method: :put %> |
+      <% end %>
+      <p>-------------------------</p>
+    </div>
+  <% end %>
+</div>
